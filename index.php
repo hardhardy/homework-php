@@ -2,7 +2,7 @@
 $a = 5;
 $b = '05';
 $title = 'Домашняя работа №1';
-$task3 = 'Домашняя работа №1';
+$dateY = date('Y');
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@ $task3 = 'Домашняя работа №1';
 	<meta charset="UTF-8">
 </head>
 <body>
-<h1><?php echo $task3 ?></h1>
+<h1><?php echo $title ?></h1>
 <?php
 echo "&#36;a = 5; <br>";
 echo "&#36;b = '05'; <br>";
@@ -32,14 +32,20 @@ echo ' - Потому что значения одинакового типа и
 <?php
 $a = 1;
 $b = 2;
-echo "-- a=$a b=$b --";
+echo "&#36;a=$a <br>&#36;b=$b";
+?>
+<br>
+$a = $a + $b;<br>
+$b = $a - $b;<br>
+$a = $a - $b;<br>
+<?php
 $a = $a + $b;
 $b = $a - $b;
 $a = $a - $b;
-echo "-- a=$a b=$b --";
+echo "echo &#36;a=$a <br>echo &#36;b=$b";
 ?>
 <br><br>
 <br><br>
-<b><?php echo date('Y'), " год"; ?></b>
+<b><?php echo $dateY, " год"; ?></b>
 </body>
 </html>
