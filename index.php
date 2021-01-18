@@ -44,8 +44,7 @@ $b = $a - $b;
 $a = $a - $b;
 echo "echo &#36;a=$a <br>echo &#36;b=$b";
 ?>
-<br><br>
-<br><br>
+<br><br><br><br>
 <b><?php echo $dateY, " год"; ?></b>
 </body>
 </html>
