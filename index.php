@@ -7,11 +7,11 @@ $dateY = date('Y');
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo $title ?></title>
+	<title><?=$title?></title>
 	<meta charset="UTF-8">
 </head>
 <body>
-<h1><?php echo $title ?></h1>
+<h1><?=$title?></h1>
 <?php
 echo "&#36;a = 5; <br>";
 echo "&#36;b = '05'; <br>";
@@ -45,6 +45,6 @@ $a = $a - $b;
 echo "echo &#36;a=$a <br>echo &#36;b=$b";
 ?>
 <br><br><br><br>
-<b><?php echo $dateY, " год"; ?></b>
+<b><?=$dateY?> год</b>
 </body>
 </html>
