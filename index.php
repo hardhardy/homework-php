@@ -119,7 +119,29 @@ switch ($i) {
 }
 ?>
 <br>
-
+<h2>Задание №3</h2>
+<?php
+echo 'a + b = ' . sum($a, $b) . '<br>';
+function sum($a, $b) {
+  return $a + $b;
+}
+echo 'a - b = ' . minus($a, $b) . '<br>';
+function minus($a, $b) {
+  return $a - $b;
+}
+echo 'a * b = ' . multiply($a, $b) . '<br>';
+function multiply($a, $b) {
+  return $a * $b;
+}
+if ($b == 0) {
+  echo 'a / b = на 0 делить нельзя';}
+else {
+  echo 'a / b = ' . divide($a, $b);
+}
+function divide($a, $b) {
+  return $a / $b;
+}
+?>
 
 <br>
 <br><br>
