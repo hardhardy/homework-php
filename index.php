@@ -28,7 +28,7 @@ if ($a>=0 && $b>=0) {
 <br>
 <h2>Задание №2</h2>
 $i = <?=$i?>
-<p>break</p>
+<p>break -
 <?php
 switch ($i) {
   case 0:
@@ -80,8 +80,8 @@ switch ($i) {
     echo 'i = 15';
     break;
 }
-?>
-<p><strike>break</strike></p>
+?></p>
+<p><strike>break</strike> -
 <?php
 switch ($i) {
   case 0:
@@ -117,8 +117,7 @@ switch ($i) {
   case 15:
     echo '15';
 }
-?>
-<br>
+?></p>
 <h2>Задание №3</h2>
 <?php
 echo 'a + b = ' . sum($a, $b) . '<br>';
@@ -141,6 +140,29 @@ else {
 function divide($a, $b) {
   return $a / $b;
 }
+?>
+<h2>Задание №4</h2>
+<?php
+function mathOperation ($a, $b, $operation) {
+  switch ($operation) {
+    case 'sum':
+      echo sum($a, $b);
+      break;
+    case 'minus':
+      echo minus($a, $b);
+      break;
+    case 'multiply':
+      echo multiply($a, $b);
+      break;
+    case 'divide':
+      echo divide($a, $b);
+      break;
+    default:
+      echo "Вы не корректно определили параметры!";
+      break;
+  }
+}
+echo mathOperation ($a, $b, sum);
 ?>
 
 <br>
