@@ -1,7 +1,4 @@
 <?php
-
-//TODO соберите страницу о нас с меню
-
 $menu = renderTemplate('menu');
 echo renderTemplate('layout', $menu);
 $hw2 = renderTemplate('hw-2');
