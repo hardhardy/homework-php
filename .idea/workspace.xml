@@ -25,6 +25,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -41,6 +42,7 @@
       <workItem from="1610893664100" duration="3956000" />
       <workItem from="1610958449648" duration="1773000" />
       <workItem from="1611044754804" duration="270000" />
+      <workItem from="1611306240440" duration="1118000" />
     </task>
     <servers />
   </component>
@@ -48,9 +50,17 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="858" y="182" key="#Inspections" timestamp="1611306358804">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="858" y="182" key="#Inspections/0.0.1920.1050@0.0.1920.1050" timestamp="1611306358804" />
     <state x="721" y="359" key="#Notifications" timestamp="1610959522649">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="721" y="359" key="#Notifications/0.0.1920.1050@0.0.1920.1050" timestamp="1610959522649" />
+    <state x="733" y="149" key="SettingsEditor" timestamp="1611306848251">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="733" y="149" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1611306848251" />
   </component>
 </project>
