@@ -225,8 +225,7 @@ function Tm($h, $m)
 }
 echo tm($dateG,$datei);
 ?>
-
 <br>
-<br><br>
-
+<br>
+<br>
 <b><?=$dateY?> год</b>
