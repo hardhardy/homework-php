@@ -173,6 +173,24 @@ echo mathOperation ($a, $b, 'multiply');
 echo mathOperation ($a, $b, 'divide');
 echo mathOperation ($a, $b, 'del');
 ?>
+<h2>Задание №6</h2>
+<?php
+function power($val, $pow) {
+  if ($pow >= 0) {
+    if ($pow == 1) {
+      return $val;
+    } else {
+      return $val * power($val, $pow - 1);
+    }
+  } else {
+    if ($pow <= 0) {
+      return 'Степень >= 0';
+    }
+  }
+}
+echo power($a, $b);
+?>
+
 
 <br>
 <br><br>
