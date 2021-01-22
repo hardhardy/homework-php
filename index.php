@@ -135,11 +135,12 @@ function multiply($a, $b) {
 if ($b == 0) {
   echo 'a / b = на 0 делить нельзя';}
 else {
+  function divide($a, $b) {
+    return $a / $b;
+  }
   echo 'a / b = ' . divide($a, $b);
 }
-function divide($a, $b) {
-  return $a / $b;
-}
+
 ?>
 <h2>Задание №4</h2>
 <?php
