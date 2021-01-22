@@ -4,6 +4,8 @@ $b = rand(-10, 10);
 $i = rand(0, 15);
 $title = 'Домашняя работа №2';
 $dateY = date('Y');
+$dateG = date('G');
+$datei = date('i');
 ?>
 <!DOCTYPE html>
 <html>
@@ -132,15 +134,14 @@ echo 'a * b = ' . multiply($a, $b) . '<br>';
 function multiply($a, $b) {
   return $a * $b;
 }
-if ($b == 0) {
-  echo 'a / b = на 0 делить нельзя';}
-else {
-  function divide($a, $b) {
-    return $a / $b;
+echo 'a / b = ' . divide($a, $b);
+function divide($a, $b) {
+    if ($b == 0) {
+        return 'на 0 делить нельзя';
+    } else {
+        return $a / $b;
+    }
   }
-  echo 'a / b = ' . divide($a, $b);
-}
-
 ?>
 <h2>Задание №4</h2>
 <?php
@@ -156,11 +157,7 @@ function mathOperation ($a, $b, $operation) {
       echo 'a * b = ' . multiply($a, $b) . '<br>';
       break;
     case 'divide':
-      if ($b == 0) {
-        echo 'a / b = на 0 делить нельзя <br>';}
-      else {
-        echo 'a / b = ' . divide($a, $b) . '<br>';
-      }
+      echo 'a / b = ' . divide($a, $b) . '<br>';
       break;
     default:
       echo "Вы не корректно определили параметры! <br>";
@@ -176,7 +173,7 @@ echo mathOperation ($a, $b, 'del');
 <h2>Задание №6</h2>
 <?php
 function power($val, $pow) {
-  if ($pow >= 0) {
+  if ($pow > 0) {
     if ($pow == 1) {
       return $val;
     } else {
@@ -184,13 +181,57 @@ function power($val, $pow) {
     }
   } else {
     if ($pow <= 0) {
-      return 'Степень >= 0';
+      return 'Степень <= 0';
     }
   }
 }
 echo power($a, $b);
 ?>
-
+<h2>Задание №7</h2>
+<?php
+function Hours($h)
+{
+  $h = (int) $h;
+  switch ($h) {
+    case 1:
+    case 21:
+      return 'час';
+    case 2:
+    case 3:
+    case 4:
+    case 22:
+    case 23:
+    case 24:
+      return 'часа';
+    default:
+      return 'часов';
+  }
+}
+function Minutes($m)
+{
+  $m = (int) $m;
+  if ($m > 10 && $m < 15) {
+    return 'минут';
+  }
+  switch ($m % 10) {
+    case 1:
+      return 'минута';
+    case 2:
+    case 3:
+    case 4:
+      return 'минуты';
+    default:
+      return 'минут';
+  }
+}
+function Tm($h, $m)
+{
+  $h = (int) $h;
+  $m = (int) $m;
+  return $h . ' ' . Hours($h) . ' ' . $m . ' ' . Minutes($m);
+}
+echo tm($dateG,$datei);
+?>
 
 <br>
 <br><br>
