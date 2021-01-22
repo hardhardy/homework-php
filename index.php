@@ -147,23 +147,31 @@ else {
 function mathOperation ($a, $b, $operation) {
   switch ($operation) {
     case 'sum':
-      echo sum($a, $b);
+      echo 'a + b = ' . sum($a, $b) . '<br>';
       break;
     case 'minus':
-      echo minus($a, $b);
+      echo 'a - b = ' . minus($a, $b) . '<br>';
       break;
     case 'multiply':
-      echo multiply($a, $b);
+      echo 'a * b = ' . multiply($a, $b) . '<br>';
       break;
     case 'divide':
-      echo divide($a, $b);
+      if ($b == 0) {
+        echo 'a / b = на 0 делить нельзя <br>';}
+      else {
+        echo 'a / b = ' . divide($a, $b) . '<br>';
+      }
       break;
     default:
-      echo "Вы не корректно определили параметры!";
+      echo "Вы не корректно определили параметры! <br>";
       break;
   }
 }
-echo mathOperation ($a, $b, sum);
+echo mathOperation ($a, $b, 'sum');
+echo mathOperation ($a, $b, 'minus');
+echo mathOperation ($a, $b, 'multiply');
+echo mathOperation ($a, $b, 'divide');
+echo mathOperation ($a, $b, 'del');
 ?>
 
 <br>
