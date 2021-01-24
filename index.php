@@ -1,9 +1,8 @@
 <?php
 $menu = renderTemplate('menu');
-echo renderTemplate('layout', $menu);
-$hw2 = renderTemplate('hw-2');
-echo renderTemplate('layout', $hw2);
-function renderTemplate($page, $content = "") {
+$hw3 = renderTemplate('hw-3');
+echo renderTemplate('layout', $menu, $hw3);
+function renderTemplate($page, $menu = "", $content = "") {
     ob_start();
     include $page . ".php";
     return ob_get_clean();
