@@ -39,7 +39,6 @@ function task2f1($task2)
     return "$task2" . ' - четное число<br />';
   }
 }
-
 do {
   echo task2f1($task2);
   $task2++;
@@ -76,6 +75,8 @@ foreach ($arrCity as $obl => $city) {
 ?>
 <h2>Задание №4</h2>
 <?php
+// как надо mb_substr strtolower strtoupper
+// делаю как ненадо }:D
 function translit($text) {
   $alfabet = array(
     'а' => 'a', 'б' => 'b', 'в' => 'v',
@@ -103,7 +104,6 @@ function translit($text) {
   );
   return strtr($text, $alfabet);
 }
-
 echo translit($title);
 ?>
 <h2>Задание №5</h2>
@@ -115,6 +115,7 @@ function change($text) {
 echo change($title);
 ?>
 <h2>Задание №6</h2>
+
 
 <h2>Задание №7</h2>
 <?php
