@@ -76,7 +76,7 @@ foreach ($arrCity as $obl => $city) {
 ?>
 <h2>Задание №4</h2>
 <?php
-function translit($text){
+function translit($text) {
   $alfabet = array(
     'а' => 'a', 'б' => 'b', 'в' => 'v',
     'г' => 'g', 'д' => 'd', 'е' => 'e',
@@ -103,10 +103,17 @@ function translit($text){
   );
   return strtr($text, $alfabet);
 }
-echo translit("Привет Сосед!");
+
+echo translit($title);
 ?>
 <h2>Задание №5</h2>
-
+<?php
+function change($text) {
+  $text = str_replace(" ", "_", $text);
+  return $text;
+}
+echo change($title);
+?>
 <h2>Задание №6</h2>
 
 <h2>Задание №7</h2>
