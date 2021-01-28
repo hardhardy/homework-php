@@ -67,10 +67,12 @@ $arrCity = [
 ];
 foreach ($arrCity as $obl => $city) {
   echo $obl . ": <br>";
-  foreach ($city as $cityName) {
-    echo $cityName . ', ';
+  $str = "";
+  foreach ($city as $cityName){
+    $str .= $cityName . ", ";
   }
-  echo '<br>';
+  $str = mb_substr($str , 0, -2) . '.<br>';
+  echo "{$str} <br>";
 }
 ?>
 <h2>Задание №4</h2>
@@ -89,18 +91,7 @@ function translit($text) {
     'ф' => 'f', 'х' => 'h', 'ц' => 'c',
     'ч' => 'ch', 'ш' => 'sh', 'щ' => 'sch',
     'ь' => '\'', 'ы' => 'y', 'ъ' => '\'',
-    'э' => 'e', 'ю' => 'yu', 'я' => 'ya',
-    'А' => 'A', 'Б' => 'B', 'В' => 'V',
-    'Г' => 'G', 'Д' => 'D', 'Е' => 'E',
-    'Ё' => 'E', 'Ж' => 'ZH', 'З' => 'Z',
-    'И' => 'I', 'Й' => 'Y', 'К' => 'K',
-    'Л' => 'L', 'М' => 'M', 'Н' => 'N',
-    'О' => 'O', 'П' => 'P', 'Р' => 'R',
-    'С' => 'S', 'Т' => 'T', 'У' => 'U',
-    'Ф' => 'F', 'Х' => 'H', 'Ц' => 'C',
-    'Ч' => 'CH', 'Ш' => 'SH', 'Щ' => 'SCH',
-    'Ь' => '\'', 'Ы' => 'Y', 'Ъ' => '\'',
-    'Э' => 'E', 'Ю' => 'YU', 'Я' => 'YA'
+    'э' => 'e', 'ю' => 'yu', 'я' => 'ya'
   );
   return strtr($text, $alfabet);
 }
@@ -130,6 +121,16 @@ foreach ($arrCity as $obl => $city) {
       echo $cityName . '<br>';
   }
 }
+?>
+<h2>Задание №9</h2>
+<?php
+function replace_str($str) {
+$res = translit($str);
+$res = change($res);
+echo $res;
+}
+
+echo replace_str($title);
 ?>
 <br>
 <br>
