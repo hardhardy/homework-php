@@ -1,17 +1,19 @@
 <?php
+$menu = renderTemplate('menu');
+echo renderTemplate('layout', $menu);
+function renderTemplate($page, $content = "")
+{
+  ob_start();
+  include $page . ".php";
+  return ob_get_clean();
+}
+
 $a = 5;
 $b = '05';
 $title = 'Домашняя работа №1';
 $dateY = date('Y');
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title><?=$title?></title>
-	<meta charset="UTF-8">
-</head>
-<body>
-<h1><?=$title?></h1>
+<h1><?= $title ?></h1>
 <?php
 echo "&#36;a = 5; <br>";
 echo "&#36;b = '05'; <br>";
@@ -45,6 +47,4 @@ $a = $a - $b;
 echo "echo &#36;a=$a <br>echo &#36;b=$b";
 ?>
 <br><br><br><br>
-<b><?=$dateY?> год</b>
-</body>
-</html>
+<b><?= $dateY ?> год</b>
