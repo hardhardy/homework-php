@@ -20,10 +20,6 @@ $datei = date('i');
     $task2 = <?= $task2 ?></b>
 <h2>Задание №1</h2>
 <?php
-// while ($task1 < 100) {
-//  echo $task1 . ' ';
-//   $task1 += 3;
-// }
 while ($task1 < 100) {
   $task1++;
   if ($task1 % 3 == 0) {

@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b30f662e-7539-45d4-9b2a-efd986adc863" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw-2.php" beforeDir="false" afterPath="$PROJECT_DIR$/hw-2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw-3.php" beforeDir="false" afterPath="$PROJECT_DIR$/hw-3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +17,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nBRh7vOCa6EUhypHBlLc0p9fg7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,7 +46,12 @@
       <workItem from="1610958449648" duration="1773000" />
       <workItem from="1611044754804" duration="270000" />
       <workItem from="1611306240440" duration="9397000" />
-      <workItem from="1611470931369" duration="1272000" />
+      <workItem from="1611470931369" duration="6458000" />
+      <workItem from="1611562022359" duration="13120000" />
+      <workItem from="1611664103890" duration="3524000" />
+      <workItem from="1611834393240" duration="3622000" />
+      <workItem from="1611917814595" duration="624000" />
+      <workItem from="1611983904763" duration="2035000" />
     </task>
     <servers />
   </component>
@@ -65,5 +71,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="733" y="149" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1611306848251" />
+    <state x="874" y="258" key="run.anything.popup" timestamp="1611984267202">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="874" y="258" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1611984267202" />
   </component>
 </project>
