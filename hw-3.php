@@ -8,8 +8,6 @@ function renderTemplate($page, $content = "")
   return ob_get_clean();
 }
 
-$a = rand(-10, 10);
-$b = rand(-10, 10);
 $task1 = 0;
 $task2 = 0;
 $title = 'Домашняя работа №3';
@@ -18,9 +16,7 @@ $dateG = date('G');
 $datei = date('i');
 ?>
 <h1><?= $title ?></h1>
-<b>$a = <?= $a ?><br>
-    $b = <?= $b ?><br>
-    $task1 = <?= $task1 ?><br>
+<b> $task1 = <?= $task1 ?><br>
     $task2 = <?= $task2 ?></b>
 <h2>Задание №1</h2>
 <?php
@@ -48,6 +44,7 @@ function task2f1($task2)
     return "$task2" . ' - четное число<br />';
   }
 }
+
 do {
   echo task2f1($task2);
   $task2++;
@@ -77,18 +74,17 @@ $arrCity = [
 foreach ($arrCity as $obl => $city) {
   echo $obl . ": <br>";
   $str = "";
-  foreach ($city as $cityName){
+  foreach ($city as $cityName) {
     $str .= $cityName . ", ";
   }
-  $str = mb_substr($str , 0, -2) . '.<br>';
+  $str = mb_substr($str, 0, -2) . '.<br>';
   echo "{$str} <br>";
 }
 ?>
 <h2>Задание №4</h2>
 <?php
-// как надо mb_substr strtolower strtoupper
-// делаю как ненадо }:D
-function translit($text) {
+function translit($text)
+{
   $alfabet = array(
     'а' => 'a', 'б' => 'b', 'в' => 'v',
     'г' => 'g', 'д' => 'd', 'е' => 'e',
@@ -102,16 +98,31 @@ function translit($text) {
     'ь' => '\'', 'ы' => 'y', 'ъ' => '\'',
     'э' => 'e', 'ю' => 'yu', 'я' => 'ya'
   );
-  return strtr($text, $alfabet);
+  $result = "";
+  for ($i = 0; $i < mb_strlen($text); $i++) {
+    $letter = mb_substr($text, $i, 1);
+    if (isset($alfabet[mb_strtolower($letter)])) {
+      if ($letter === mb_strtolower($letter)) {
+        $latin_letter = $alfabet[$letter];
+      } else {
+        $latin_letter = mb_strtoupper($alfabet[mb_strtolower($letter)]);
+      }
+    } else {
+      $latin_letter = $letter;
+    }
+    $result .= $latin_letter;
+  } return $text = $result;
 }
 echo translit($title);
 ?>
 <h2>Задание №5</h2>
 <?php
-function change($text) {
+function change($text)
+{
   $text = str_replace(" ", "_", $text);
   return $text;
 }
+
 echo change($title);
 ?>
 <h2>Задание №6</h2>
@@ -133,10 +144,11 @@ foreach ($arrCity as $obl => $city) {
 ?>
 <h2>Задание №9</h2>
 <?php
-function replace_str($str) {
-$res = translit($str);
-$res = change($res);
-echo $res;
+function replace_str($str)
+{
+  $res = translit($str);
+  $res = change($res);
+  echo $res;
 }
 
 echo replace_str($title);
