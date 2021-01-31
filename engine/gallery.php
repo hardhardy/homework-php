@@ -27,9 +27,9 @@ function loadImage()
   if (move_uploaded_file($_FILES['image']['tmp_name'], $path_big)) {
     $image = new SimpleImage();
     $image->load($path_big);
-    $image->resizeToWidth(250);
+    $image->resize(250, 150);
     $image->save($path_small);
-    header("Location: /&page=gallery");
+    header("Location: /gallery");
   } else {
     echo "Ошибка<br>";
   }

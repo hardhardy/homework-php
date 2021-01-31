@@ -3,21 +3,33 @@
   <component name="ChangeListManager">
     <list default="true" id="b30f662e-7539-45d4-9b2a-efd986adc863" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/classSimpleImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/classSimpleImage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/gallery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/news.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/news.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw-3.php" beforeDir="false" afterPath="$PROJECT_DIR$/hw-3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/catalog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/101841.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/103034.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/107374.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/1295576374_podborka_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/1295576579_podborka_21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/1295576757_podborka_55.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/1295576853_podborka_64.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/1295576923_podborka_73.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/1295577033_podborka_76.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/1295577056_podborka_82.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/1340140269_podborka_67.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/big/1340220685_podborka_68.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/101841.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/103034.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/107374.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/1295576374_podborka_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/1295576579_podborka_21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/1295576757_podborka_55.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/1295576853_podborka_64.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/1295576923_podborka_73.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/1295577033_podborka_76.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/1295577056_podborka_82.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/1340140269_podborka_67.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/gallery_img/small/1340220685_podborka_68.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/gallery.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gallery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layouts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/news.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/news.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/newsOne.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/newsOne.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +81,7 @@
       <workItem from="1611983904763" duration="2035000" />
       <workItem from="1611991503270" duration="1397000" />
       <workItem from="1612069782864" duration="3431000" />
-      <workItem from="1612095848931" duration="10229000" />
+      <workItem from="1612095848931" duration="12379000" />
     </task>
     <servers />
   </component>
