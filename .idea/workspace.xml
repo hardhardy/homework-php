@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b30f662e-7539-45d4-9b2a-efd986adc863" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw-3.php" beforeDir="false" afterPath="$PROJECT_DIR$/hw-3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +27,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -52,6 +55,8 @@
       <workItem from="1611834393240" duration="3622000" />
       <workItem from="1611917814595" duration="624000" />
       <workItem from="1611983904763" duration="2035000" />
+      <workItem from="1611991503270" duration="1397000" />
+      <workItem from="1612069782864" duration="2221000" />
     </task>
     <servers />
   </component>
@@ -67,6 +72,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="721" y="359" key="#Notifications/0.0.1920.1050@0.0.1920.1050" timestamp="1610959522649" />
+    <state x="810" y="209" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612074243173">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="810" y="209" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1612074243173" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1612074223969">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1050@0.0.1920.1050" timestamp="1612074223969" />
     <state x="733" y="149" key="SettingsEditor" timestamp="1611306848251">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

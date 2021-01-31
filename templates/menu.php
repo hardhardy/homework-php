@@ -1,5 +1,6 @@
 <a href="/">Главная</a>
-<a href="/?page=catalog">Каталог</a>
-<a href="/?page=gallery">Галерея</a>
-<a href="/">Корзина (<?=$count?>)</a>
+<a href="/catalog">Каталог</a>
+<a href="/news">Новости</a>
+<a href="/gallery">Галерея</a>
+<a href="/basket">Корзина (<?=$count?>)</a>
 <br>
