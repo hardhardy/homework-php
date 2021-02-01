@@ -31,6 +31,11 @@ switch ($page) {
     $params['catalog'] = getCatalog();
     break;
 
+  case 'product':
+    $id = (int)$_GET['id'];
+    $params['catalog'] = getProduct($id);
+    break;
+
   case 'news':
     $params['news'] = getNews();
     break;

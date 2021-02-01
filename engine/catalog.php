@@ -1,17 +1,11 @@
 <?php
-function getCatalog() {
-    return [
-        [
-            'name' => 'Пицца',
-            'price' => 24
-        ],
-        [
-            'name' => 'Чай',
-            'price' => 1
-        ],
-        [
-            'name' => 'Яблоко',
-            'price' => 12
-        ],
-    ];
+
+function getCatalog()
+{
+  return getAssocResult("SELECT * FROM products");
+}
+
+function getProduct($id)
+{
+  return getAssocResult("SELECT * FROM products WHERE id = {$id}")[0];
 }
