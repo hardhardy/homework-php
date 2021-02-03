@@ -4,7 +4,7 @@
 //Функция, возвращает текст шаблона $page с подстановкой переменных
 //из массива $params, содержимое шабона $page подставляется в
 //переменную $content главного шаблона layout для всех страниц
-function render($page, $params = [], $main = 'main')
+function render($page, $params = [], $main = 'gallery')
 {
   return renderTemplate(LAYOUTS_DIR . $main, [
     'menu' => renderTemplate('menu', $params),
