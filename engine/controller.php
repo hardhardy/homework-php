@@ -5,9 +5,7 @@
 function prepareVariables($page, $action)
 {
 
-  $params = [
-    'count' => 2
-  ];
+  $params['layout'] = 'main';
 
   switch ($page) {
     case 'index':
@@ -15,12 +13,15 @@ function prepareVariables($page, $action)
       break;
 
     case 'catalog':
+      if (isset($_POST['load'])) {
+        loadProductImage();
+      }
       $params['catalog'] = getCatalog();
       break;
 
     case 'product':
-      $id = (int)$_GET['id'];
-      $params['catalog'] = getProduct($id);
+      addLikes($_GET['id']);
+      $params['product'] = getProduct($_GET['id']);
       break;
 
     case 'news':
@@ -36,7 +37,7 @@ function prepareVariables($page, $action)
       if (isset($_POST['load'])) {
         loadImage();
       }
-      $main = 'gallery';
+      $params['layout'] = 'gallery';
       $params['gallery'] = getGallery(IMG_BIG);
       break;
 
@@ -49,7 +50,5 @@ function prepareVariables($page, $action)
       echo json_encode(getCatalog(), JSON_UNESCAPED_UNICODE);
       die();
   }
-
-
   return $params;
 }

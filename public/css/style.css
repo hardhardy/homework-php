@@ -30,3 +30,12 @@ border:3px solid #034F80;
 animation: movement 0.2s infinite;
 -webkit-animation: movement 0.2s infinite;
 	}
+
+.catalog-item {
+	margin: 10px;
+	display: inline-block;
+	width: 180px;
+}
+.catalog-item img{
+	border:3px solid white;
+}

@@ -4,12 +4,13 @@
 include "../config/config.php";
 
 
-$url_array = explode('/', $_SERVER['REQUEST_URI']);
-
-
 //Читаем параметр page из url, чтобы определить, какую страницу-шаблон
 //хочет увидеть пользователь, по умолчанию это будет index
+
+$url_array = explode('/', $_SERVER['REQUEST_URI']);
+
 $action = $url_array[2];
+
 if ($url_array[1] == "") {
   $page = 'index';
 } else {
