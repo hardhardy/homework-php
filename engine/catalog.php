@@ -15,7 +15,7 @@ function addLikes(int $id)
   executeQuery("UPDATE products SET likes = likes + 1 WHERE id = {$id}");
 }
 
-function loadProductImage()
+function loadProduct()
 {
   $path_big = IMG_CATALOG . $_FILES["image"]["name"];
   $imageinfo = getimagesize($_FILES['image']['tmp_name']);
@@ -34,12 +34,14 @@ function loadProductImage()
       exit;
     }
   }
-  if (move_uploaded_file($_FILES['image']['tmp_name'], $path_big)) {
-    $filename = mysqli_real_escape_string(getDb(), $_FILES['image']['name']);
-    executeQuery("INSERT INTO products(filename) VALUES ('$filename')");
 
+  if (move_uploaded_file($_FILES['image']['tmp_name'], $path_big)) {
+    $title = mysqli_real_escape_string(getDb(), $_POST['title']);
+    $description = mysqli_real_escape_string(getDb(), $_POST['description']);
+    $price = mysqli_real_escape_string(getDb(), $_POST['price']);
+    $filename = mysqli_real_escape_string(getDb(), $_FILES['image']['name']);
+    executeQuery("INSERT INTO `products` (`title`, `description`, `price`, `likes`, `filename`) VALUES ( '$title', '$description', '$price', '0', '$filename');");
     $image = new SimpleImage();
-    $image->save($path_big);
     header("Location: /catalog");
   } else {
     echo "Ошибка<br>";

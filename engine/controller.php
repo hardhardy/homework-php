@@ -14,14 +14,14 @@ function prepareVariables($page, $action)
 
     case 'catalog':
       if (isset($_POST['load'])) {
-        loadProductImage();
+        loadProduct();
       }
       $params['catalog'] = getCatalog();
       break;
 
     case 'product':
-      addLikes($_GET['id']);
-      $params['product'] = getProduct($_GET['id']);
+      addLikes((int)$_GET['id']);
+      $params['product'] = getProduct((int)$_GET['id']);
       break;
 
     case 'news':

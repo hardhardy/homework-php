@@ -7,11 +7,13 @@
         <img src="catalog_img/<?= $item['filename'] ?>" width="150"/><br>
         <span style="font-size: x-small;">Просмотры:<?= $item['likes'] ?></span>
         <p><?= $item['description'] ?></p>
+        <p><?= $item['price'] ?></p>
     </div></a>
 <? endforeach; ?>
 <form method="post" enctype="multipart/form-data">
     Название <input type="text" name="title"><br>
     Изображение <input type="file" name="image"><br>
-    Описание <input type="textarea" name="description"><br>
+    Описание <input type="text" name="description"><br>
+    Стоимость <input type="text" name="price"><br>
     <input type="submit" value="Добавить товар" name="load">
 </form>
