@@ -21,4 +21,5 @@ include "../engine/classSimpleImage.php";
 include "../engine/gallery.php";
 include "../engine/news.php";
 include "../engine/catalog.php";
+include "../engine/calc.php";
 include "../engine/upload.php";

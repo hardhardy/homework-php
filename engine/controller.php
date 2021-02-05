@@ -41,6 +41,10 @@ function prepareVariables($page, $action)
       $params['gallery'] = getGallery(IMG_BIG);
       break;
 
+    case 'calc':
+      $params['calc'];
+      break;
+
     case 'feedback':
       doFeedbackAction($action);
       $params['feedback'] = getAllFeedback();
