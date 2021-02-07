@@ -1,11 +1,10 @@
 <?php
 var_dump($_POST);
 
-if ($_POST) {
   $arg1 = (float)strip_tags($_POST["arg1"]);
   $arg2 = (float)strip_tags($_POST["arg2"]);
   $result = "$arg1 + $arg2";
-} return $result;
+
 
 echo $arg1;
 
