@@ -42,12 +42,28 @@ function prepareVariables($page, $action)
       break;
 
     case 'calc':
-      $params['calc'];
+      if ($_POST) {
+        $arg1 = (float)strip_tags($_POST['arg1']);
+        $arg2 = (float)strip_tags($_POST['arg2']);
+        $op = strip_tags($_POST['operation']);
+        $params['result'] = mathOperation($arg1, $arg2, $op);
+        $params['arg1'] = $arg1;
+        $params['arg2'] = $arg2;
+        $params['operation'] = $op;
+      }
+      if ($_POST) {
+        $arg3 = (float)strip_tags($_POST['arg3']);
+        $arg4 = (float)strip_tags($_POST['arg4']);
+        $op2 = strip_tags($_POST['operation2']);
+        $params['result2'] = mathOperation($arg3, $arg4, $op2);
+        $params['arg3'] = $arg3;
+        $params['arg4'] = $arg4;
+      }
       break;
 
     case 'feedback':
-      doFeedbackAction($action);
-      $params['feedback'] = getAllFeedback();
+      $params['result'] = getAllFeedback();
+      // doFeedbackAction($action);
       break;
 
     case 'apicatalog':
