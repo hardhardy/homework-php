@@ -4,9 +4,11 @@
     <list default="true" id="b30f662e-7539-45d4-9b2a-efd986adc863" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/calc.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/calc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engine/feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/feedback.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/calc.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/calc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/feedback.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +66,7 @@
       <workItem from="1612427447090" duration="8187000" />
       <workItem from="1612586752906" duration="2026000" />
       <workItem from="1612589527274" duration="147000" />
+      <workItem from="1612676089857" duration="10176000" />
     </task>
     <servers />
   </component>
@@ -103,6 +106,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="733" y="149" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1612543175058" />
+    <state x="761" y="249" width="585" height="801" key="find.popup" timestamp="1612680472791">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="761" y="249" width="585" height="801" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1612680472791" />
     <state x="874" y="258" key="run.anything.popup" timestamp="1612428241901">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
