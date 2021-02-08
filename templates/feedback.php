@@ -8,6 +8,6 @@
 </form>
 <?php foreach ($result as $item):?>
   <p>
-    <b><?=$item['name']?>:</b> <?=$item['text']?> <a href="?action=edit&id=<?=$item['id']?>">[править]</a>  <a href="?action=delete&id=<?=$item['id']?>">[x]</a>
+    <b><?=$item['name']?>:</b> <?=$item['text']?> <a href="?action=edit&id=<?=$item['id']?>">[править]</a>  <a href="?action=delete&id=<?=$item['id']?>">[X]</a>
   </p>
 <?endforeach;?>
