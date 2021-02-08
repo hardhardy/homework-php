@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b30f662e-7539-45d4-9b2a-efd986adc863" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/engine/feedback.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/catalog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/feedback.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/product.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,15 +21,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nBRh7vOCa6EUhypHBlLc0p9fg7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -43,7 +50,23 @@
       <workItem from="1610893664100" duration="3956000" />
       <workItem from="1610958449648" duration="1773000" />
       <workItem from="1611044754804" duration="270000" />
-      <workItem from="1611306240440" duration="8651000" />
+      <workItem from="1611306240440" duration="9397000" />
+      <workItem from="1611470931369" duration="6458000" />
+      <workItem from="1611562022359" duration="13120000" />
+      <workItem from="1611664103890" duration="3524000" />
+      <workItem from="1611834393240" duration="3622000" />
+      <workItem from="1611917814595" duration="624000" />
+      <workItem from="1611983904763" duration="2035000" />
+      <workItem from="1611991503270" duration="1397000" />
+      <workItem from="1612069782864" duration="3431000" />
+      <workItem from="1612095848931" duration="12986000" />
+      <workItem from="1612171170019" duration="7571000" />
+      <workItem from="1612426265386" duration="1081000" />
+      <workItem from="1612427447090" duration="8187000" />
+      <workItem from="1612586752906" duration="2026000" />
+      <workItem from="1612589527274" duration="147000" />
+      <workItem from="1612676089857" duration="14233000" />
+      <workItem from="1612773637270" duration="6831000" />
     </task>
     <servers />
   </component>
@@ -55,13 +78,45 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="858" y="182" key="#Inspections/0.0.1920.1050@0.0.1920.1050" timestamp="1611306358804" />
-    <state x="721" y="359" key="#Notifications" timestamp="1610959522649">
+    <state x="721" y="359" key="#Notifications" timestamp="1612181607086">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="721" y="359" key="#Notifications/0.0.1920.1050@0.0.1920.1050" timestamp="1610959522649" />
-    <state x="733" y="149" key="SettingsEditor" timestamp="1611306848251">
+    <state x="721" y="359" key="#Notifications/0.0.1920.1050@0.0.1920.1050" timestamp="1612181607086" />
+    <state x="564" y="534" key="#SQL_Dialects" timestamp="1612522780208">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="733" y="149" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1611306848251" />
+    <state x="564" y="534" key="#SQL_Dialects/0.0.1920.1050@0.0.1920.1050" timestamp="1612522780208" />
+    <state x="810" y="209" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612545633533">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="810" y="209" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1612545633533" />
+    <state x="1153" y="480" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612097237657">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1153" y="480" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1612097237657" />
+    <state x="967" y="448" key="FileChooserDialogImpl" timestamp="1612522779637">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="967" y="448" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1612522779637" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1612074223969">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1050@0.0.1920.1050" timestamp="1612074223969" />
+    <state x="733" y="149" key="SettingsEditor" timestamp="1612543175058">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="733" y="149" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1612543175058" />
+    <state x="761" y="249" width="585" height="801" key="find.popup" timestamp="1612680472791">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="761" y="249" width="585" height="801" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1612680472791" />
+    <state x="874" y="258" key="run.anything.popup" timestamp="1612428241901">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="874" y="258" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1612428241901" />
+    <state x="867" y="371" width="672" height="678" key="search.everywhere.popup" timestamp="1612778505242">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="867" y="371" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1612778505242" />
   </component>
 </project>
