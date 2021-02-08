@@ -3,3 +3,4 @@
 <img class="img-product" src="/catalog_img/<?= $product['filename'] ?>"/>
 <p><?= $product['description'] ?></p>
 <p><?= $product['price'] ?></p>
+<button>Купить</button>

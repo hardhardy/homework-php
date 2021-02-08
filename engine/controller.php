@@ -63,7 +63,11 @@ function prepareVariables($page, $action)
 
     case 'feedback':
       $params['result'] = getAllFeedback();
-      // doFeedbackAction($action);
+      $params['action'] = 'add';
+      if (isset($_GET['action'])) {
+        doFeedbackAction();
+      }
+      $params['buttonText'] = "Отправить";
       break;
 
     case 'apicatalog':

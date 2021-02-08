@@ -8,6 +8,7 @@
         <span style="font-size: x-small;">Просмотры:<?= $item['likes'] ?></span>
         <p><?= $item['description'] ?></p>
         <p><?= $item['price'] ?></p>
+        <button>Купить</button>
     </div></a>
 <? endforeach; ?>
 <form method="post" enctype="multipart/form-data">
