@@ -43,3 +43,11 @@ animation: movement 0.2s infinite;
 	width: 100%;
 	max-width: 500px;
 }
+.fb-message {
+	background-color: #fff3af;
+	width: 200px;
+	margin: 5px 0;
+	padding: 5px;
+	border-radius: 3px;
+	text-align: center;
+}

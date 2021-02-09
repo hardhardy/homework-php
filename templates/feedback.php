@@ -1,13 +1,16 @@
 <h2>Отзывы</h2>
-<?=$message[$_GET['message']]?><br>
-<form action="?action=<?=$action?>" method="post">
-  <input hidden type="text" name="id" value="<?=$row['id']?>"><br>
-  Ваше имя <input type="text" name="name" value="<?=$row['name']?>"><br>
-  Текст сообщения <input type="text" name="text" value="<?=$row['feedback']?>"><br>
-  <input type="submit" name="postfeedback" value=<?=$buttonText?>>
+<form action="/feedback/<?= $action ?>" method="post">
+    Оставьте отзыв: <br>
+    <input hidden type="text" name="id_feed" value="<?= $id_feed ?>"><br>
+    <input placeholder="Ваше имя" type="text" name="name" value="<?= $name ?>"><br>
+    <input placeholder="Текст сообщения" type="text" name="text" value="<?= $text ?>"><br>
+    <input type="submit" name="postfeedback" value=<?= $button ?>>
 </form>
-<?php foreach ($result as $item):?>
-  <p>
-    <b><?=$item['name']?>:</b> <?=$item['text']?> <a href="?action=edit&id=<?=$item['id']?>">[править]</a>  <a href="?action=delete&id=<?=$item['id']?>">[x]</a>
-  </p>
-<?endforeach;?>
+<?= $message ?>
+<?php foreach ($feedback as $value): ?>
+    <div class="fb-value">
+        <b><?= $value['name'] ?>:</b> <?= $value['text'] ?>
+        <a href="/feedback/edit/?id_feed=<?= $value['id'] ?>">[править]</a>
+        <a href="/feedback/delete/?id_feed=<?= $value['id'] ?>">[X]</a>
+    </div>
+<? endforeach; ?>
