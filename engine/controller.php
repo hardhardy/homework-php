@@ -20,8 +20,9 @@ function prepareVariables($page, $action)
       break;
 
     case 'product':
-      addLikes((int)$_GET['id']);
-      $params['product'] = getProduct((int)$_GET['id']);
+      $id = (int)$_GET['id'];
+      addLikes($id);
+      $params['product'] = getProduct($id);
       break;
 
     case 'news':
@@ -61,13 +62,17 @@ function prepareVariables($page, $action)
       }
       break;
 
+    case 'feedbackapi':
+      doApiFeedbackAction($action);
+      break;
+
+    case 'feedback2':
+      $params['feedback'] = getAllFeedback();
+      break;
+
     case 'feedback':
-      $params['result'] = getAllFeedback();
-      $params['action'] = 'add';
-      if (isset($_GET['action'])) {
-        doFeedbackAction();
-      }
-      $params['buttonText'] = "Отправить";
+      doFeedbackAction($params, $action);
+      $params['feedback'] = getAllFeedback();
       break;
 
     case 'apicatalog':
