@@ -17,13 +17,15 @@ define('DB', 'homework-php');
 
 const ERR_CODE = [
   null => "",
-  "OK" => "Отзыв добавлен!",
-  "DELETED" => "Отзыв удален!",
-  "ERROR_ADD" => "Ошибка добавления отзыва!",
-  "ERROR_DEL" => "Ошибка удаления отзыва!",
-  "ERROR_UPDATE" => "Ошибка изменения отзыва!",
-  "UPDATED" => "Отзыв изменен!"
+  "OK" => '<div class="fb-message">Отзыв добавлен!</div>',
+  "DELETED" => '<div class="fb-message">Отзыв удален!</div>',
+  "ERROR_ADD" => '<div class="fb-message">Ошибка добавления отзыва!</div>',
+  "ERROR_DEL" => '<div class="fb-message">Ошибка удаления отзыва!</div>',
+  "ERROR_UPDATE" => '<div class="fb-message">Ошибка изменения отзыва!</div>',
+  "UPDATED" => '<div class="fb-message">Отзыв изменен!</div>'
 ];
+
+
 
 //Тут же подключим основные функции нашего приложения, пока это render
 //Можете кстати подключить и в главном index.php если такая вложенность напрягает

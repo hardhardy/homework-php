@@ -4,7 +4,7 @@
 <form action="/feedback/<?=$action?>/" method="post">
     Оставьте отзыв: <br>
     <input type="text" name="name" placeholder="Ваше имя" value="<?=$name?>"><br>
-    <input type="text" name="message" placeholder="Ваш отзыв" value="<?=$text?>"><br>
+    <input type="text" name="text" placeholder="Ваш отзыв" value="<?=$text?>"><br>
     <input type="submit" value="<?=$buttonText?>">
 </form>
 

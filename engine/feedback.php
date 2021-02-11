@@ -110,9 +110,6 @@ function updateFeedback($id) {
   return $result;
 }
 
-// if ($_GET['message'] == 'OK') $params ['message'] = '<div class="fb-message">Отзыв добавлен</div>';
-// if ($_GET['message'] == 'edit') $params ['message'] = '<div class="fb-message">Отзыв изменен</div>';
-// if ($_GET['message'] == 'delete') $params ['message'] = '<div class="fb-message">Отзыв удален</div>';
 
 
 
