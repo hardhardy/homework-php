@@ -2,17 +2,27 @@
 
 function getCatalog()
 {
-  return getAssocResult("SELECT * FROM products ORDER BY likes DESC");
+  return getAssocResult("SELECT * FROM goods ORDER BY likes DESC");
 }
 
 function getProduct(int $id)
 {
-  return getAssocResult("SELECT * FROM products WHERE id = {$id}")[0];
+  $id = (int)$id;
+  $sql = "SELECT * FROM goods WHERE id = {$id}";
+
+  $result = getAssocResult($sql)[0];
+  return $result;
+}
+
+function getAllProducts() {
+  $sql = "SELECT * FROM goods WHERE 1";
+  $result = getAssocResult($sql);
+  return $result;
 }
 
 function addLikes(int $id)
 {
-  executeQuery("UPDATE products SET likes = likes + 1 WHERE id = {$id}");
+  executeQuery("UPDATE goods SET likes = likes + 1 WHERE id = {$id}");
 }
 
 function loadProduct()
@@ -40,7 +50,7 @@ function loadProduct()
     $description = mysqli_real_escape_string(getDb(), $_POST['description']);
     $price = mysqli_real_escape_string(getDb(), $_POST['price']);
     $filename = mysqli_real_escape_string(getDb(), $_FILES['image']['name']);
-    executeQuery("INSERT INTO `products` (`title`, `description`, `price`, `likes`, `filename`) VALUES ( '$title', '$description', '$price', '0', '$filename');");
+    executeQuery("INSERT INTO `goods` (`name`, `description`, `price`, `likes`, `image`) VALUES ( '$title', '$description', '$price', '0', '$filename');");
     $image = new SimpleImage();
     header("Location: /catalog");
   } else {

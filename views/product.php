@@ -1,4 +1,10 @@
-<h2>Отзывы</h2>
+<h1><?= $product['name'] ?></h1>
+<p>Просмотры:<?= $product['likes'] ?></p>
+<img class="img-product" src="/catalog_img/<?= $product['image'] ?>"/>
+<p><?= $product['description'] ?></p>
+<p><?= $product['price'] ?></p>
+<button>Купить</button>
+<hr>
 <form action="/feedback/<?= $action ?>" method="post">
     Оставьте отзыв: <br>
     <input hidden type="text" name="id_feed" value="<?= $id_feed ?>"><br>
