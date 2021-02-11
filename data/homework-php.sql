@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3308
--- Время создания: Фев 08 2021 г., 13:56
+-- Время создания: Фев 11 2021 г., 14:31
 -- Версия сервера: 8.0.19
 -- Версия PHP: 7.4.5
 
@@ -20,6 +20,18 @@ SET time_zone = "+00:00";
 --
 -- База данных: `homework-php`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `basket`
+--
+
+CREATE TABLE `basket` (
+  `id` int NOT NULL,
+  `goods_id` int NOT NULL,
+  `session_id` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -41,6 +53,33 @@ INSERT INTO `feedback` (`id`, `name`, `text`) VALUES
 (1, 'ТЕст2', 'ТЕкст тест ntcn'),
 (3, 'Увася', 'Хей хей трололо'),
 (4, 'Яша', 'Олеее Олее Олее');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `goods`
+--
+
+CREATE TABLE `goods` (
+  `id` int NOT NULL,
+  `name` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `description` text NOT NULL,
+  `price` int NOT NULL,
+  `likes` int NOT NULL,
+  `image` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `goods`
+--
+
+INSERT INTO `goods` (`id`, `name`, `description`, `price`, `likes`, `image`) VALUES
+(1, ' Товар 1', 'Описание товара', 10000, 14, '01.jpg'),
+(3, 'Товар 2', 'Очень дорого', 999999, 22, '02.jpg'),
+(10, 'ТОвар 3', 'Телочка', 1, 6, 'pokrushk.jpg'),
+(11, 'Товар 4', 'Девчуха', 12, 3, '26089_wallpapper_big6.jpg'),
+(12, 'Product', 'Text', 123412, 2, 'Yandex-Images-2016-10-05.jpg'),
+(13, 'Проверка', 'Елки зелёные', 98765431, 2, 'Yandex-Images-2016-09-18.jpg');
 
 -- --------------------------------------------------------
 
@@ -69,37 +108,50 @@ INSERT INTO `news` (`id`, `title`, `text`, `likes`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `products`
+-- Структура таблицы `orders`
 --
 
-CREATE TABLE `products` (
+CREATE TABLE `orders` (
   `id` int NOT NULL,
-  `title` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `description` text NOT NULL,
-  `price` int NOT NULL,
-  `likes` int NOT NULL,
-  `filename` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `name` text NOT NULL,
+  `phone` text NOT NULL,
+  `adres` text NOT NULL,
+  `session_id` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Дамп данных таблицы `products`
+-- Структура таблицы `users`
 --
 
-INSERT INTO `products` (`id`, `title`, `description`, `price`, `likes`, `filename`) VALUES
-(1, ' Товар 1', 'Описание товара', 10000, 9, '01.jpg'),
-(3, 'Товар 2', 'Очень дорого', 999999, 16, '02.jpg'),
-(10, 'ТОвар 3', 'Телочка', 1, 5, 'pokrushk.jpg'),
-(11, 'Товар 4', 'Девчуха', 12, 2, '26089_wallpapper_big6.jpg'),
-(12, '52153215', 'цуВПыфвап', 123412, 2, 'Yandex-Images-2016-10-05.jpg');
+CREATE TABLE `users` (
+  `id` int NOT NULL,
+  `login` text NOT NULL,
+  `pass` text NOT NULL,
+  `hash` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Индексы сохранённых таблиц
 --
 
 --
+-- Индексы таблицы `basket`
+--
+ALTER TABLE `basket`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `feedback`
 --
 ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `goods`
+--
+ALTER TABLE `goods`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -109,9 +161,15 @@ ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `products`
+-- Индексы таблицы `orders`
 --
-ALTER TABLE `products`
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `users`
+--
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -119,10 +177,22 @@ ALTER TABLE `products`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `basket`
+--
+ALTER TABLE `basket`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT для таблицы `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT для таблицы `goods`
+--
+ALTER TABLE `goods`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `news`
@@ -131,10 +201,16 @@ ALTER TABLE `news`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT для таблицы `products`
+-- AUTO_INCREMENT для таблицы `orders`
 --
-ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `orders`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
