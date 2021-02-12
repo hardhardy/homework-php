@@ -24,6 +24,10 @@ function addLikes(int $id)
 {
   executeQuery("UPDATE goods SET likes = likes + 1 WHERE id = {$id}");
 }
+function addLikez(int $id)
+{
+  executeQuery("UPDATE goods SET likez = likez + 1 WHERE id = {$id}");
+}
 
 function loadProduct()
 {

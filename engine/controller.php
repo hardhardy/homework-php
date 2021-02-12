@@ -46,6 +46,12 @@ function prepareVariables($page, $action, $id)
 
     //api/buy/5
     case 'api':
+      if ($action == "addlikez") {
+        addLikeGood($_GET['id']);
+        $likez = getGoodLikes($_GET['id']);
+        echo json_encode(['likez' => 1, $likez]);
+        die();
+      }
       if ($action == "buy") {
         addToBasket($id);
         //var_dump($id);
