@@ -1,9 +1,11 @@
 <h1><?= $product['name'] ?></h1>
-<p>Просмотры:<?= $product['likes'] ?></p>
 <img class="img-product" src="/catalog_img/<?= $product['image'] ?>"/>
+<p><span style="font-size: x-small;">Просмотры:<?= $product['likes'] ?></span>
+<span style="font-size: x-small;">Понравилось:<span id="likez<?= $product['id'] ?>"><?= $product['likez'] ?></span></span></p>
 <p><?= $product['description'] ?></p>
 <p><?= $product['price'] ?></p>
-<button>Купить</button>
+<button class="likez" data-id="<?= $product['id'] ?>">Нравится</button>
+<button class="buy" data-id="<?= $product['id'] ?>">Купить</button>
 <hr>
 <form action="/feedback/<?= $action ?>" method="post">
     Оставьте отзыв: <br>
@@ -20,3 +22,32 @@
         <a href="/feedback/delete/?id_feed=<?= $value['id'] ?>">[X]</a>
     </div>
 <? endforeach; ?>
+
+<script>
+    let buttonslikez = document.querySelectorAll('.likez');
+    buttonslikez.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            let id = elem.getAttribute('data-id');
+            (async () => {
+                const response = await fetch('/api/addlikez/?id=' + id);
+                const answer = await response.json();
+                document.getElementById('likez' + id).innerText = answer.likez;
+                console.log (answer.likez)
+            })();
+        })
+    });
+
+    let buttons = document.querySelectorAll('.buy');
+    buttons.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            let id = elem.getAttribute('data-id');
+            (async () => {
+                const response = await fetch('/api/buy/' + id);
+                const answer = await response.json();
+                document.getElementById('count').innerText = answer.count;
+                //document.getElementById(id).remove();
+            })();
+        })
+    });
+
+</script>

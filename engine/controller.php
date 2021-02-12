@@ -47,8 +47,8 @@ function prepareVariables($page, $action, $id)
     //api/buy/5
     case 'api':
       if ($action == "addlikez") {
-        addLikeGood($_GET['id']);
-        $likez = getGoodLikes($_GET['id']);
+        addLikezGood($_GET['id']);
+        $likez = getGoodLikez($_GET['id']);
         echo json_encode(['likez' => 1, $likez]);
         die();
       }
@@ -60,7 +60,6 @@ function prepareVariables($page, $action, $id)
       }
       if ($action == "delete") {
         deleteFromBasket($id);
-
         echo json_encode([
           "result" => 1,
           "count" => getBasketCount(),
