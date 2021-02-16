@@ -83,10 +83,22 @@ function prepareVariables($page, $action, $id)
     case 'basket':
       $params['basket'] = getBasket();
       $params['summ'] = summFromBasket();
+      if ($_GET['action'] == 'order') {
+        $name = htmlspecialchars(strip_tags($_POST['name']));
+        $phone = htmlspecialchars(strip_tags($_POST['phone']));
+        $adres = htmlspecialchars(strip_tags($_POST['adres']));
+        $session_id = session_id();
+        $sql = "INSERT INTO `orders` (`name`, `phone`, `adres`, `session_id`, `status`) VALUES ('{$name}', '{$phone}', '{$adres}', '{$session_id}', '0');";
+        mysqli_query(getDb(), $sql);
+        header("Location: ?message=order");
+      }
       break;
 
-    case
-    'news':
+    case 'admin':
+      $params['orders'] = getOrder($id);
+      break;
+
+    case 'news':
       $params['news'] = getNews();
       break;
 

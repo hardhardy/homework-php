@@ -2,20 +2,20 @@
 if (is_admin()) {}
 ?>
 <h2>Админка</h2>
+<h2>Корзины</h2>
 <table class="basket-list">
     <tr>
-        <th>Изображение</th>
-        <th>Наименование</th>
-        <th>Цена</th>
+        <th>Имя</th>
+        <th>Телефон</th>
+        <th>Адрес</th>
         <th></th>
     </tr>
-  <?foreach ($order as $item):?>
-      <tr id="item_<?=$item['basket_id']?>">
-          <td><img src="/catalog_img/<?= $item['image'] ?>" width="150"></td>
-          <td><?=$item['name']?></td>
-          <td>Цена: <?=$item['price']?></td>
-          <td><button class="delete" data-id="<?=$item['basket_id']?>">Удалить</button></td>
+  <?foreach ($orders as $item):?>
+      <tr id="item_<?=$item['session_id']?>">
+          <td><?= $item['name'] ?></td>
+          <td><?=$item['phone']?></td>
+          <td><?=$item['adres']?></td>
+          <td><button class="delete" data-id="<?=$item['session_id']?>">Удалить</button></td>
       </tr>
   <?endforeach;?>
 </table>
-<br>
