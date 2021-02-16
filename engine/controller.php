@@ -2,15 +2,70 @@
 
 //Для каждой страницы готовим массив со своим набором переменных
 //для подстановки их в соотвествующий шаблон
-function prepareVariables($page, $action)
+function prepareVariables($page, $action, $id)
 {
-
+//Для каждой страницы готовим массив со своим набором переменных
+//для подстановки их в соотвествующий шаблон
+  $params = ["count" => getBasketCount()];
+  $params['allow'] = false;
+  if (is_auth()) {
+    $params['allow'] = true;
+    $params['user'] = get_user();
+  }
   $params['layout'] = 'main';
 
   switch ($page) {
-    case 'index':
-      $params['name'] = 'SUPER MAGAZ';
+
+    case 'auth':
+      if ($action == "login") {
+        if (isset($_POST['send'])) {
+          $login = $_POST['login'];
+          $pass = $_POST['pass'];
+
+          if (!auth($login, $pass)) {
+            die('Не верный логин пароль');
+          } else {
+            if (isset($_POST['save'])) {
+              makeHashAuth();
+              header("Location: {$_SERVER['HTTP_REFERER']}");
+
+            }
+            header("Location: {$_SERVER['HTTP_REFERER']}");
+          }
+        }
+        exit;
+      }
+      if ($action == "logout") {
+        session_unset();
+        session_destroy();
+        setcookie("hash", "", time() - 3600, "/");
+        header("Location: {$_SERVER['HTTP_REFERER']}");
+      }
+
       break;
+
+    //api/buy/5
+    case 'api':
+      if ($action == "addlikez") {
+        addLikezGood($_GET['id']);
+        $likez = getGoodLikez($_GET['id']);
+        echo json_encode(['likez' => 1, $likez]);
+        die();
+      }
+      if ($action == "buy") {
+        addToBasket($id);
+        //var_dump($id);
+        echo json_encode(["result" => 1, "count" => getBasketCount()]);
+        exit;
+      }
+      if ($action == "delete") {
+        deleteFromBasket($id);
+        echo json_encode([
+          "result" => 1,
+          "count" => getBasketCount(),
+          "summ" => summFromBasket()]);
+        exit;
+      }
 
     case 'catalog':
       if (isset($_POST['load'])) {
@@ -23,6 +78,24 @@ function prepareVariables($page, $action)
       $id = (int)$_GET['id'];
       addLikes($id);
       $params['product'] = getProduct($id);
+      break;
+
+    case 'basket':
+      $params['basket'] = getBasket();
+      $params['summ'] = summFromBasket();
+      if ($_GET['action'] == 'order') {
+        $name = htmlspecialchars(strip_tags($_POST['name']));
+        $phone = htmlspecialchars(strip_tags($_POST['phone']));
+        $adres = htmlspecialchars(strip_tags($_POST['adres']));
+        $session_id = session_id();
+        $sql = "INSERT INTO `orders` (`name`, `phone`, `adres`, `session_id`, `status`) VALUES ('{$name}', '{$phone}', '{$adres}', '{$session_id}', '0');";
+        mysqli_query(getDb(), $sql);
+        header("Location: ?message=order");
+      }
+      break;
+
+    case 'admin':
+      $params['orders'] = getOrder($id);
       break;
 
     case 'news':
@@ -71,7 +144,7 @@ function prepareVariables($page, $action)
       break;
 
     case 'feedback':
-      doFeedbackAction($params, $action);
+      doFeedbackAction($params, $action, $id);
       $params['feedback'] = getAllFeedback();
       break;
 
@@ -79,5 +152,6 @@ function prepareVariables($page, $action)
       echo json_encode(getCatalog(), JSON_UNESCAPED_UNICODE);
       die();
   }
+
   return $params;
 }

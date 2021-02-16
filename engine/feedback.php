@@ -5,21 +5,31 @@ function getAllFeedback()
   $sql = "SELECT * FROM `feedback` ORDER BY `id` DESC";
   return getAssocResult($sql);
 }
+function getFeedback($id) {
+  $id = (int)$id;
+  $sql = "SELECT * FROM feedback WHERE id={$id}";
+  $result = getAssocResult($sql)[0];
 
-function addFeedBack($name, $text)
+  if (mysqli_affected_rows(getDb()) != 1) return false;
+  return $result;
+}
+function addFeedBack()
 {
-  $name = strip_tags(htmlspecialchars(mysqli_real_escape_string(getDb(), $name)));
-  $text = strip_tags(htmlspecialchars(mysqli_real_escape_string(getDb(), $text)));
-  $sql = "INSERT INTO `feedback` (`name`, `text`) VALUES ('{$name}', '{$text}');";
-
-  executeQuery($sql);
-  return mysqli_insert_id(getDb());
+  $db = getDb();
+  $name = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['name'])));
+  $text = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['text'])));
+  $sql = "INSERT INTO `feedback`(`name`, `text`) VALUES ('{$name}','{$text}')";
+  $result = executeQuery($sql);
+  if (mysqli_affected_rows(getDb()) != 1) return false;
+  return $result;
 }
 
-function deleteFeedBack($id_feed)
-{
-  $id_feed = (int)$id_feed;
-  executeQuery("DELETE FROM `feedback` WHERE `id` = {$id_feed}");
+function deleteFeedback($id) {
+  $id = (int)$id;
+  $sql = "DELETE FROM `feedback` WHERE id={$id}";
+  $result = executeQuery($sql);
+  if (mysqli_affected_rows(getDb()) != 1) return false;
+  return $result;
 }
 
 function doApiFeedbackAction($action)
@@ -43,43 +53,63 @@ function doApiFeedbackAction($action)
   }
 }
 
-function doFeedbackAction(&$params, $action)
-{
-  $params['name'] = '';
-  $params['text'] = '';
-  $params['button'] = 'Добавить';
-  $params['action'] = 'add';
-  $params['id_feed'] = '';
+function doFeedbackAction(&$params, $action, $id) {
+
+  $params['error'] = ERR_CODE[$_GET['status']];
+
+
+  //значения по умолчанию
+  $params['action'] = "add";
+  $params['buttonText'] = "Добавить";
+  $params['name'] = "";
+  $params['text'] = "";
+
   if ($action == "add") {
-    addFeedBack($_POST['name'], $_POST['text']);
-    header("Location: /feedback/?message=OK");
+    if (addFeedBack())
+      header("Location: /feedback/?status=OK");
+    else
+      header("Location: /feedback/?status=ERROR_ADD");
+
   }
+
   if ($action == "delete") {
-    deleteFeedBack($_GET['id_feed']);
-    header("Location: /feedback/?message=delete");
-  }
-  if ($action == "edit") {
-    $id_feed = (int)$_GET['id_feed'];
-    $result_feedback = getAssocResult("SELECT * FROM `feedback` WHERE id = {$id_feed}");
-    $params['name'] = $result_feedback[0]['name'];
-    $params['text'] = $result_feedback[0]['text'];
-    $params['action'] = 'save';
-    $params['id_feed'] = $id_feed;
-    $params['button'] = 'Изменить';
+    $error = deleteFeedback($id);
+    if ($error)
+      header("Location: /feedback/?status=DELETED");
+    else
+      header("Location: /feedback/?status=ERROR_DEL");
+
   }
 
   if ($action == "save") {
-    $id_feed = (int)$_POST['id_feed'];
-    $name = strip_tags(htmlspecialchars(mysqli_real_escape_string(getDb(), $_POST['name'])));
-    $text = strip_tags(htmlspecialchars(mysqli_real_escape_string(getDb(), $_POST['text'])));
+    $error = updateFeedback($id);
+    if ($error)
+      header("Location: /feedback/?status=UPDATED");
+    else
+      header("Location: /feedback/?status=ERROR_UPDATE");
 
-    executeQuery("UPDATE `feedback` SET `name` = '{$name}', `text` = '{$text}' WHERE `feedback`.`id` = {$id_feed};");
-
-    header("Location: /feedback/?message=edit");
   }
-  if ($_GET['message'] == 'OK') $params ['message'] = '<div class="fb-message">Отзыв добавлен</div>';
-  if ($_GET['message'] == 'edit') $params ['message'] = '<div class="fb-message">Отзыв изменен</div>';
-  if ($_GET['message'] == 'delete') $params ['message'] = '<div class="fb-message">Отзыв удален</div>';
+
+
+  if ($action == "edit") {
+    $feedback = getFeedback($id);
+    $params['action'] = "save/{$id}";
+    $params['buttonText'] = "Править";
+    $params['name'] = $feedback['name'];
+    $params['text'] = $feedback['text'];
+  }
 }
+
+function updateFeedback($id) {
+  $db = getDb();
+  $name = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['name'])));
+  $message = mysqli_real_escape_string($db, strip_tags(htmlspecialchars($_POST['message'])));
+  $sql = "UPDATE `feedback` SET `name`='{$name}',`text`='{$message}' WHERE id = {$id}";
+  $result = executeQuery($sql);
+  if (mysqli_affected_rows(getDb()) != 1) return false;
+  return $result;
+}
+
+
 
 
