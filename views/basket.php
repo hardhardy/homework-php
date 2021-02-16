@@ -19,7 +19,7 @@
 Общая стоимость: <span id="summ"><?=$summ?></span><br>
 
 <h2>Оформите заказ</h2>
-<form action="/order/" method="post">
+<form action="?action=order" method="post">
     <input placeholder="Ваше имя" type="text" name="name">
     <input placeholder="Телефон" type="text" name="phone">
     <input placeholder="Адрес доставки" type="text" name="adres">

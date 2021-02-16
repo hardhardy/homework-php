@@ -23,8 +23,8 @@
 </form>
 
 <script>
-    let buttonslike = document.querySelectorAll('.likez');
-    buttonslike.forEach((elem) => {
+    let buttonsLike = document.querySelectorAll('.likez');
+    buttonsLike.forEach((elem) => {
         elem.addEventListener('click', () => {
             let id = elem.getAttribute('data-id');
             (async () => {
